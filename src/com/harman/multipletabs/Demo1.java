@@ -34,7 +34,11 @@ public class Demo1 {
 		driver.findElement(By.id("input_password")).sendKeys("admin123");
 		driver.findElement(By.id("input_go")).click();
 		
-		driver.close(); //check with tab is closed
+		//get the text and print it
+		String actualError=driver.findElement(By.xpath("(//div[@class='alert alert-danger'])[3]")).getText();
+		System.out.println(actualError);
+		
+		//driver.close(); //check with tab is closed
 	}
 
 }
